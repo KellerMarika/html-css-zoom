@@ -9,11 +9,11 @@
     --white: rgb(255, 255, 255);
 
     /* size */
-    --space-s: 5px;
-    --space-m: 15px;
+    --space-s: 4px;
+    --space-m: 12px;
 
     /* font-size */
-    --font-size-m: font-size: 14px;
+    --font-size-m: 12px;
 }
 
 /* ..Base................................ */
@@ -25,28 +25,33 @@
 
 body {
     color: var(--white);
-    background-color: rgb(241, 151, 151);
+    background-color: rgb(0, 0, 0);
     font-size: var(--font-size-m);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
     text-decoration: none;
-    color: var(--white)
+    color: var(--white);
 }
 
-/* layout */
+/* layout ........*/
 .maxi-container {
     display: flex;
     flex-direction: column;
     height: 100%;
+    /* fixed?? */
+    position: fixed;
 }
 
 nav li {
     display: inline-block;
     list-style-type: none;
+    padding: var(--space-s);
 }
 
 nav {
+
     flex-shrink: 0;
 }
 
@@ -54,13 +59,12 @@ main {
     flex-grow: 1;
 }
 
-/* top nav */
+/* top nav ...................................*/
 
 .top-navbar .navbar-container {
     text-align: right;
     padding-top: 5px;
-    padding-bottom: var(--space-m);
-    border: 1px solid red;
+    border: 1px solid rgb(85, 218, 32);
 }
 
 .top-navbar .display-options button {
@@ -71,24 +75,26 @@ main {
     padding: var(--space-s);
 }
 
-/* main  */
-
-section.members {
-    border: 1px solid rgb(28, 8, 206);
+/* main ......................................... */
+main {
+    display: flex;
 }
 
 main .members.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  /*   row-gap: 1vw;
-    column-gap: 1vh; */
-    border: 2px solid rgb(144, 240, 120);
-   /*  height: calc(100% -100px); */
+
+    /* padding contenitore membri */
+    padding: 10px 5vh 80px 5vh;
+    border: 1px solid rgb(68, 200, 252);
+    /* spazi tra i membri */
+    row-gap: 1vw;
+    column-gap: 1vh;
+
 }
 
-
-/* single member */
+/* single member........................................ */
 .members .member-container {
     /* occorre come riferimento per member-info (absolute)*/
     position: relative;
@@ -96,8 +102,13 @@ main .members.container {
 
 .member {
     border: 1px solid blueviolet;
-    width: calc((100%/7));
-   
+    /* calcolo che determina la dimensione delle singole card
+    100% della misura del contenitore - 6(spazi)x 1vh(column-gap) diviso 7 membri */
+    width: calc((100% - (6 * 1vh)) /7);
+
+    /* questo non funziona correttamente perchè la barra sotto è in fixed */
+    height: calc(((100% - (4 * 1vh)) /5));
+
 }
 
 .member-info {
@@ -112,32 +123,34 @@ img {
     width: 100%;
 }
 
-/* bottom nav */
+/* bottom nav .........................................*/
+
 .bottom-navbar .navbar-container {
     display: flex;
     justify-content: space-between;
-    max-height: 100px;
+    align-items: center;
+    background-color: var(--dark);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
+/* :::::::work in progres!!!!!!:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+
+
+
+
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
 .option-container {
     text-align: center;
     display: flex;
     align-items: center;
     padding: 0 0.2rem;
-    line-height: 2rem;
-}
-
-.bottom-navbar .navbar-container {
-    display: flex;
-    align-items: center;
-    background-color: var(--dark);
-    position: fixed;
-    bottom: 0;
-    width: 100%
-}
-
-.option-container {
-    padding-top: var(--space-m);
+    padding-top: calc(3 * (var(--space-s)));
 }
 
 .end-option {
@@ -145,11 +158,13 @@ img {
 }
 
 .option-container i {
-    font-size: 2rem;
+    font-size: 1.6rem;
+    padding: var(--space-s);
 }
 
 .option-container .option-range {
     font-family: cursive;
+    font-size: 1rem;
 }
 
 .end-option {
