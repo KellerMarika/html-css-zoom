@@ -1,12 +1,6 @@
-/* base */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-}
-
+/* variabili globali ...............*/
 :root {
+
     /* color */
     --grey: rgb(74, 74, 74);
     --dark: rgb(34, 34, 34);
@@ -15,13 +9,24 @@
     --white: rgb(255, 255, 255);
 
     /* size */
-    --space-s:5px;
+    --space-s: 5px;
     --space-m: 15px;
+
+    /* font-size */
+    --font-size-m: font-size: 14px;
+}
+
+/* ..Base................................ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     color: var(--white);
     background-color: rgb(241, 151, 151);
+    font-size: var(--font-size-m);
 }
 
 a {
@@ -29,20 +34,11 @@ a {
     color: var(--white)
 }
 
-.end-meeting a {
-    color: var(--red);
-}
 /* layout */
-
-.top-navbar .navbar-container {
-    text-align: right;
-    padding-top: 5px;
-    padding-bottom: var(--space-m);
-}
-
-.bottom-navbar .navbar-container {
+.maxi-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
 }
 
 nav li {
@@ -50,24 +46,24 @@ nav li {
     list-style-type: none;
 }
 
-.maxi-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
-}
-
 nav {
     flex-shrink: 0;
 }
 
 main {
-    flex-grow: 2;
+    flex-grow: 1;
 }
 
 /* top nav */
 
-.top-navbar .display-options button{
+.top-navbar .navbar-container {
+    text-align: right;
+    padding-top: 5px;
+    padding-bottom: var(--space-m);
+    border: 1px solid red;
+}
+
+.top-navbar .display-options button {
     background-color: var(--grey);
     color: var(--white);
     border: none;
@@ -75,33 +71,39 @@ main {
     padding: var(--space-s);
 }
 
-
-
 /* main  */
 
-section.members{
+section.members {
+    border: 1px solid rgb(28, 8, 206);
 }
+
 main .members.container {
     display: flex;
     flex-wrap: wrap;
-       justify-content:center;
-       row-gap: 1vw;
-       column-gap: 1vh;
+    justify-content: center;
+  /*   row-gap: 1vw;
+    column-gap: 1vh; */
+    border: 2px solid rgb(144, 240, 120);
+   /*  height: calc(100% -100px); */
 }
 
 
+/* single member */
 .members .member-container {
+    /* occorre come riferimento per member-info (absolute)*/
     position: relative;
 }
 
-.member-container .member {
-    width: calc((100%/7)-8vw);
-
+.member {
+    border: 1px solid blueviolet;
+    width: calc((100%/7));
+   
 }
 
 .member-info {
     position: absolute;
     bottom: 0px;
+    padding: var(--space-s);
     background-color: rgba(117, 109, 109, 0.5);
 }
 
@@ -111,43 +113,55 @@ img {
 }
 
 /* bottom nav */
+.bottom-navbar .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    max-height: 100px;
+}
 
-.option-container{
+.option-container {
     text-align: center;
     display: flex;
-    align-items:center;
+    align-items: center;
     padding: 0 0.2rem;
     line-height: 2rem;
 }
 
 .bottom-navbar .navbar-container {
-  display: flex;
-  align-items: center;
-  background-color: var(--dark);
-  position: fixed;
-  bottom:0;
-  width:100%
-}
-.option-container,
-.end-option{
-    padding-top:var(--space-m) ;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark);
+    position: fixed;
+    bottom: 0;
+    width: 100%
 }
 
-.option-container i{
+.option-container {
+    padding-top: var(--space-m);
+}
+
+.end-option {
+    padding: var(--space-m)
+}
+
+.option-container i {
     font-size: 2rem;
 }
-.option-container .option-range{
+
+.option-container .option-range {
     font-family: cursive;
 }
-.end-option{
+
+.end-option {
     background-color: var(--grey);
     color: var(--red);
-    align-self: stretch; 
+    align-self: stretch;
+}
 
-
+.end-meeting a {
+    color: var(--red);
 }
 
 .option-container .green {
     color: var(--green);
-
 }
