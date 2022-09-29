@@ -3,8 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0; 
-    border: 1px solid bisque;
-    font-size:x-small;
+     font-size:x-small;
 }
 
 :root{
@@ -35,12 +34,6 @@ a{
 }
 
 
-.maxi-container{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
 .top-navbar .navbar-container{
     text-align: right;
 }
@@ -49,4 +42,40 @@ a{
     display: flex;
     justify-content: space-between;
 }
+
+.maxi-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+  }
+nav{
+    flex-shrink: 0;
+}
+
+main{flex-grow: 2;
+}
+
+.members-container{
+    display: flex;
+    flex-wrap: wrap;}
+
+.member{
+    width: calc(100%/7);
+
+}  
+.member-container{
+    position: relative;
+}
+.member-info{
+    position: absolute;
+    bottom:0px;
+    background-color:  rgba(117, 109, 109, 0.5);
+}
+img{
+    display:block;
+    width: 100%;
+}
+
+
 
