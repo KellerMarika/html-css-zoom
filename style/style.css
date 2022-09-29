@@ -1,5 +1,23 @@
+/* general */
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0; 
+    border: 1px solid bisque;
+}
+.root{
+    --grey: rgb(74, 74, 74);
+    --dark: rgb(34, 34, 34);
+    --green: rgb(75, 200, 0);
+    --white:rgb(255, 255, 255);
+
+}
+
+nav li{
+    display: inline-block
+}
+
+.maxi-container{
+    display: flex;
+    flex-direction: column;
 }
