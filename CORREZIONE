@@ -1,0 +1,5 @@
+1)picsum permette di personalizzare la misura (non avevo bisogno di usare transform scale)
+2)overflow auto su tag con flex-grow
+-----------MACRO-ERRORI----------------
+1)height 100% dovevo darlo a tutti i padri(troppi) del contenitore delle card
+2) se uso il fixed per la nav  la height del padre supremo deve avere height - altezza nav
